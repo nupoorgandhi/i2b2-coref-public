@@ -1,0 +1,763 @@
+[
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+        {
+            "cui": "C0278060",
+            "pref_name": "mental status",
+            "count": 1
+        }
+    ],
+    [],
+    [],
+    [],
+    [],
+    [
+        {
+            "cui": "C0006141",
+            "pref_name": "breast",
+            "count": 1
+        },
+        {
+            "cui": "C0024881",
+            "pref_name": "mastectomy",
+            "count": 1
+        },
+        {
+            "cui": "C0446516",
+            "pref_name": "arm",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C1305866",
+            "pref_name": "weight",
+            "count": 1
+        },
+        {
+            "cui": "C0009676",
+            "pref_name": "confused",
+            "count": 1
+        },
+        {
+            "cui": "C0232462",
+            "pref_name": "decreased appetite",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0027627",
+            "pref_name": "mets",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0019947",
+            "pref_name": "hospice",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0242664",
+            "pref_name": "husband",
+            "count": 1
+        },
+        {
+            "cui": "C0004093",
+            "pref_name": "weak",
+            "count": 1
+        },
+        {
+            "cui": "C1299582",
+            "pref_name": "unable",
+            "count": 2
+        },
+        {
+            "cui": "C0004916",
+            "pref_name": "bed",
+            "count": 1
+        },
+        {
+            "cui": "C0009676",
+            "pref_name": "confused",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0231221",
+            "pref_name": "asymptomatic",
+            "count": 1
+        },
+        {
+            "cui": "C0039239",
+            "pref_name": "sinus tachycardia",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0027627",
+            "pref_name": "mets",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0006121",
+            "pref_name": "brainstem",
+            "count": 1
+        },
+        {
+            "cui": "C0596002",
+            "pref_name": "reflexes",
+            "count": 1
+        },
+        {
+            "cui": "C0278252",
+            "pref_name": "poor prognosis",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0699512",
+            "pref_name": "dilantin",
+            "count": 1
+        },
+        {
+            "cui": "C0740057",
+            "pref_name": "decadron",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0024002",
+            "pref_name": "lorazepam",
+            "count": 1
+        },
+        {
+            "cui": "C0441633",
+            "pref_name": "scan",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0023380",
+            "pref_name": "lethargy",
+            "count": 1
+        },
+        {
+            "cui": "C0178987",
+            "pref_name": "airway",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0021925",
+            "pref_name": "intubation",
+            "count": 1
+        },
+        {
+            "cui": "C0857353",
+            "pref_name": "hypotensive",
+            "count": 1
+        },
+        {
+            "cui": "C0013030",
+            "pref_name": "dopamine",
+            "count": 1
+        },
+        {
+            "cui": "C0733815",
+            "pref_name": "levophed",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0025872",
+            "pref_name": "metronidazole",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0242664",
+            "pref_name": "husband",
+            "count": 1
+        }
+    ],
+    [],
+    [],
+    [
+        {
+            "cui": "C0006141",
+            "pref_name": "breast",
+            "count": 1
+        },
+        {
+            "cui": "C0024884",
+            "pref_name": "radical mastectomy",
+            "count": 1
+        },
+        {
+            "cui": "C0001551",
+            "pref_name": "adjuvant",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0020119",
+            "pref_name": "development",
+            "count": 1
+        },
+        {
+            "cui": "C0024236",
+            "pref_name": "lymphedema",
+            "count": 1
+        },
+        {
+            "cui": "C0230347",
+            "pref_name": "left arm",
+            "count": 1
+        },
+        {
+            "cui": "C0004093",
+            "pref_name": "weakness",
+            "count": 1
+        },
+        {
+            "cui": "C0027627",
+            "pref_name": "metastatic disease",
+            "count": 1
+        },
+        {
+            "cui": "C0004454",
+            "pref_name": "axilla",
+            "count": 1
+        },
+        {
+            "cui": "C0501403",
+            "pref_name": "nerve plexus",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0042232",
+            "pref_name": "vaginal",
+            "count": 1
+        },
+        {
+            "cui": "C0019080",
+            "pref_name": "bleeding",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0524466",
+            "pref_name": "intracranial",
+            "count": 1
+        },
+        {
+            "cui": "C0012634",
+            "pref_name": "disease",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0012634",
+            "pref_name": "disease",
+            "count": 1
+        },
+        {
+            "cui": "C0230347",
+            "pref_name": "left arm",
+            "count": 2
+        },
+        {
+            "cui": "C0006090",
+            "pref_name": "brachial plexus",
+            "count": 1
+        },
+        {
+            "cui": "C0030552",
+            "pref_name": "paresis",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0595998",
+            "pref_name": "lives",
+            "count": 1
+        },
+        {
+            "cui": "C0242664",
+            "pref_name": "husband",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0036375",
+            "pref_name": "school",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0242664",
+            "pref_name": "husband",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0337664",
+            "pref_name": "smoker",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0037369",
+            "pref_name": "smoking",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0001975",
+            "pref_name": "alcohol",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0337576",
+            "pref_name": "aunt",
+            "count": 1
+        },
+        {
+            "cui": "C0006141",
+            "pref_name": "breast",
+            "count": 1
+        },
+        {
+            "cui": "C0006826",
+            "pref_name": "cancer",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0037047",
+            "pref_name": "siblings",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0009566",
+            "pref_name": "complications",
+            "count": 1
+        }
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+        {
+            "cui": "C0015392",
+            "pref_name": "eyes",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0235394",
+            "pref_name": "wasting",
+            "count": 1
+        }
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+        {
+            "cui": "C0026837",
+            "pref_name": "rigid",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0027627",
+            "pref_name": "metastatic disease",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0221198",
+            "pref_name": "lesions",
+            "count": 1
+        },
+        {
+            "cui": "C0796494",
+            "pref_name": "lobes",
+            "count": 1
+        },
+        {
+            "cui": "C0013604",
+            "pref_name": "edema",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0087136",
+            "pref_name": "single",
+            "count": 1
+        },
+        {
+            "cui": "C0221198",
+            "pref_name": "lesion",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0013604",
+            "pref_name": "edema",
+            "count": 1
+        },
+        {
+            "cui": "C0577559",
+            "pref_name": "mass",
+            "count": 1
+        },
+        {
+            "cui": "C0018827",
+            "pref_name": "ventricles",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0393985",
+            "pref_name": "uncal herniation",
+            "count": 1
+        }
+    ],
+    [],
+    [],
+    [
+        {
+            "cui": "C0460005",
+            "pref_name": "torso",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0225757",
+            "pref_name": "middle lobe lung",
+            "count": 1
+        },
+        {
+            "cui": "C0028259",
+            "pref_name": "nodule",
+            "count": 1
+        },
+        {
+            "cui": "C0027627",
+            "pref_name": "metastatic disease",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0024109",
+            "pref_name": "lung",
+            "count": 1
+        },
+        {
+            "cui": "C0029053",
+            "pref_name": "opacities",
+            "count": 1
+        },
+        {
+            "cui": "C0221198",
+            "pref_name": "lesions",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0218063",
+            "pref_name": "ensure",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0023884",
+            "pref_name": "liver",
+            "count": 1
+        },
+        {
+            "cui": "C0221198",
+            "pref_name": "lesions",
+            "count": 1
+        },
+        {
+            "cui": "C0027627",
+            "pref_name": "metastatic disease",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0032225",
+            "pref_name": "pleural",
+            "count": 1
+        },
+        {
+            "cui": "C0013687",
+            "pref_name": "effusion",
+            "count": 1
+        },
+        {
+            "cui": "C0006142",
+            "pref_name": "of breast cancer",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0153690",
+            "pref_name": "bony metastases",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0011334",
+            "pref_name": "cavity",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0006141",
+            "pref_name": "breast",
+            "count": 1
+        },
+        {
+            "cui": "C0006104",
+            "pref_name": "brain",
+            "count": 1
+        },
+        {
+            "cui": "C0027627",
+            "pref_name": "mets",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0178987",
+            "pref_name": "airway",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0699512",
+            "pref_name": "dilantin",
+            "count": 1
+        },
+        {
+            "cui": "C0740057",
+            "pref_name": "decadron",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0278060",
+            "pref_name": "mental status",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0557061",
+            "pref_name": "discussion",
+            "count": 1
+        },
+        {
+            "cui": "C1310585",
+            "pref_name": "comfort",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0026549",
+            "pref_name": "morphine",
+            "count": 1
+        },
+        {
+            "cui": "C0699194",
+            "pref_name": "ativan",
+            "count": 1
+        },
+        {
+            "cui": "C0740057",
+            "pref_name": "decadron",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0349707",
+            "pref_name": "aspiration",
+            "count": 1
+        }
+    ],
+    [],
+    [],
+    [],
+    [
+        {
+            "cui": "C0024467",
+            "pref_name": "mg",
+            "count": 2
+        },
+        {
+            "cui": "C0030193",
+            "pref_name": "pain",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0024467",
+            "pref_name": "mg",
+            "count": 2
+        },
+        {
+            "cui": "C0036572",
+            "pref_name": "seizure",
+            "count": 1
+        },
+        {
+            "cui": "C1304698",
+            "pref_name": "liquid",
+            "count": 1
+        }
+    ],
+    [],
+    [
+        {
+            "cui": "C0024467",
+            "pref_name": "mg",
+            "count": 2
+        },
+        {
+            "cui": "C0031246",
+            "pref_name": "suppository",
+            "count": 1
+        }
+    ],
+    [
+        {
+            "cui": "C0031246",
+            "pref_name": "suppository",
+            "count": 1
+        }
+    ],
+    [],
+    [],
+    [],
+    [
+        {
+            "cui": "C0006826",
+            "pref_name": "cancer",
+            "count": 1
+        }
+    ],
+    [],
+    [],
+    [],
+    [
+        {
+            "cui": "C0019947",
+            "pref_name": "hospice",
+            "count": 1
+        }
+    ],
+    [],
+    [],
+    [],
+    [],
+    []
+]
