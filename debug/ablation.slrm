@@ -1,0 +1,19 @@
+#!/bin/sh
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem=20GB
+#SBATCH --cpus-per-task=16
+#SBATCH --time=0
+#SBATCH --array=1-37
+#SBATCH --gres=gpu:v100:1
+#SBATCH --error=/projects/tir4/users/nmgandhi/coref/debug/error_slurm.out
+
+
+LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /projects/tir4/users/nmgandhi/coref/debug/torun/torun_ablation_tune.txt)
+echo $LINE
+
+cd /projects/tir4/users/nmgandhi/coref/src/coref
+source ~/.bashrc
+conda activate tf-gpu-cuda10
+echo $PATH
+GPU=0 python train.py $LINE /projects/tir4/users/nmgandhi/coref/config/ablation.conf

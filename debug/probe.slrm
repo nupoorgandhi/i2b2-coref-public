@@ -1,0 +1,20 @@
+#!/bin/sh
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem=200GB
+#SBATCH --cpus-per-task=16
+#SBATCH --gres=gpu:1
+
+#SBATCH --time=0
+
+
+
+cd /projects/tir4/users/nmgandhi/coref/src/structural-probe
+source ~/.bashrc
+module load gcc-5.4.0
+
+conda activate sp-env
+echo $PATH
+p $1
+python run_experiment.py $2
+python run_experiment.py $3

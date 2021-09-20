@@ -1,0 +1,13 @@
+#!/bin/sh
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem=1GB
+#SBATCH --cpus-per-task=1
+#SBATCH --time=0
+
+LINE=$(sed -n "$SLURM_ARRAY_TASK_ID"p /projects/tir4/users/nmgandhi/coref/debug/torun/umls.txt)
+echo $LINE
+
+cd /projects/tir4/users/nmgandhi/coref/src/coref/umls_tagger
+
+python umls_tag.py $LINE

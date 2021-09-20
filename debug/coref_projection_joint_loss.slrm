@@ -1,0 +1,17 @@
+#!/bin/sh
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem=20GB
+#SBATCH --cpus-per-task=16
+#SBATCH --gres=gpu:v100:1
+#SBATCH --time=0
+#SBATCH --error=/projects/tir4/users/nmgandhi/coref/debug/error_slurm.out
+
+
+
+
+cd /projects/tir4/users/nmgandhi/coref/src/coref
+source ~/.bashrc
+conda activate tf-gpu-cuda10
+echo $PATH
+GPU=0 python train_projection.py spanbert_base_sl512_blr2e-05_tlr0.0001_projection_joint_loss ../../config/basic-k.conf ../../config/str_probe_abl/sid100-0-0_dlTrue_mr700_cw0.5_kw0.5_sw0.yaml
