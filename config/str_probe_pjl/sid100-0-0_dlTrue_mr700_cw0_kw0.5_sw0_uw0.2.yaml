@@ -1,0 +1,64 @@
+dataset:
+  batch_size: 1
+  concept_weight: 0.5
+  coref_weight: 0
+  umls_weight: 0.2
+  corpus:
+    conll_word_idx: 0
+    dev_path: partition=dev_dataset=src_tgt_maxex=100_ratio=0.8.extracted.conll
+    root: /projects/tir4/users/nmgandhi/coref/data/conll
+    test_path: partition=test_dataset=src_tgt_maxex=100_ratio=0.8.extracted.conll
+    train_path: partition=train_dataset=src_tgt_maxex=100_ratio=0.8.extracted.conll
+  doc_level: true
+  emb_weight: 0
+  embeddings:
+    dev_path: model=spanbert_base_partition=dev_dataset=src_tgt_maxex=100_ratio=0.8.h5
+    root: /projects/tir4/users/nmgandhi/coref/data/emb
+    src_dev_path: model=spanbert_base_partition=dev_dataset=src_maxex=100.h5
+    src_test_path: model=spanbert_base_partition=test_dataset=src_maxex=100.h5
+    src_train_path: model=spanbert_base_partition=train_dataset=src_maxex=100.h5
+    test_path: model=spanbert_base_partition=test_dataset=src_tgt_maxex=100_ratio=0.8.h5
+    tgt_dev_path: model=spanbert_base_partition=dev_dataset=tgt_maxex=50.h5
+    tgt_test_path: model=spanbert_base_partition=test_dataset=tgt_maxex=100.h5
+    tgt_train_path: model=spanbert_base_partition=train_dataset=tgt_maxex=100.h5
+    train_path: model=spanbert_base_partition=train_dataset=src_tgt_maxex=100_ratio=0.8.h5
+    type: subword
+  interpolation: 0
+  observation_fieldnames:
+  - document
+  - start_indices
+  - end_indices
+  - concepts
+  - cluster_ids
+  - embeddings
+  observation_level: document
+  sample_id: 100-0-0
+model:
+  hidden_dim: 2324
+  model_layer: 0
+  model_type: spanBERT-disk
+  use_disk: true
+probe:
+  diagonal: false
+  maximum_rank: 700
+  params_path: predictor.params
+  psd_parameters: true
+  task_name: coref-distance
+  task_signature: word_pair
+probe_training:
+  epochs: 40
+  loss: L1
+reporting:
+  observation_paths:
+    dev_path: dev.observations
+    test_path: test.observations
+    train_path: train.observations
+  prediction_paths:
+    dev_path: dev.predictions
+    test_path: test.predictions
+    train_path: train.predictions
+  reporting_methods:
+  - spearmanr
+  - image_examples
+  - root_acc
+  root: /projects/tir4/users/nmgandhi/coref/data/projections_abl
