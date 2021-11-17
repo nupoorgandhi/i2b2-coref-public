@@ -1,3 +1,24 @@
+# Abstract
+Recent work has shown fine-tuning neural coreference models can produce strong performance when adapting to different domains. However, at the same time, this can require a large amount of annotated target examples. In this work, we focus on supervised domain adaptation for clinical notes, proposing the use of concept knowledge to more efficiently adapt coreference models to a new domain. We develop methods to improve the span representations via (1) a retrofitting loss to incentivize span representations to satisfy a knowledge-based distance function and (2) a scaffolding loss to guide the recovery of knowledge from the span representation. By integrating these losses, our model is able to improve our baseline precision and F-1 score. In particular, we show that incorporating knowledge with end-to-end coreference models results in better performance on the most challenging, domain-specific spans.
+
+# Citation
+```
+@inproceedings{gandhi-etal-2021-improving,
+    title = "Improving Span Representation for Domain-adapted Coreference Resolution",
+    author = "Gandhi, Nupoor  and
+      Field, Anjalie  and
+      Tsvetkov, Yulia",
+    booktitle = "Proceedings of the Fourth Workshop on Computational Models of Reference, Anaphora and Coreference",
+    month = nov,
+    year = "2021",
+    address = "Punta Cana, Dominican Republic",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.crac-1.13",
+    pages = "121--131",
+   
+}
+```
+
 # Set up data
 After obtaining i2b2 and ontonotes data, create a few directories:
 - .conll files in conll_dir/
@@ -33,4 +54,3 @@ Modify experiments.conf
 
 
 
-# i2b2-coref-public
