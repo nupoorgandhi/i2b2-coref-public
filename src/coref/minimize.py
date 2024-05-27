@@ -49,24 +49,20 @@ class DocumentState(object):
     self.speakers = []
     self.segment_info = []
     self.token_ids =[]
-    # self.concept_dict = concept_dict
-    # self.concept_dict_short = concept_dict_short
+    
     self.concept_dict_str = concept_dict_str
     self.umls_dict_str = umls_dict_str
     self.umls_clusters = {}
 
   def get_concept_dict(self):
     concept_dict = {}
-    directory = '/projects/tir4/users/nmgandhi/coref/data/concepts'
-    # iterate through docs in directory
+    directory = ''
     for filename in os.listdir(directory):
       doc_id = filename[:-len('.txt.con')]
-      # print('doc_id', doc_id)
       concept_dict[doc_id] = defaultdict(list)
       with open(os.path.join(directory, filename)) as fp:
         for line in fp.readlines():
-          # print('line.strip()', line.strip())
-          # print('shlex.split(line.strip())')
+          
           try:
             shlex_split_str = shlex.split(line.strip())
           except (ValueError) as e:
@@ -98,31 +94,23 @@ class DocumentState(object):
     pprefix = '[retrieve_concept]'
     doc_id = doc_id.split('_')[0]
     if doc_id not in self.concept_dict:
-      # print(pprefix, 'doc_id not found', doc_id)
       return 0
     sen_id = int(token_id.split(':')[0])
     if sen_id not in self.concept_dict[doc_id]:
-      # print(pprefix, 'sen_id not found', sen_id, self.concept_dict[doc_id])
       return 0
     if len(token_id.split(':')) ==1:
-      # print(pprefix, 'no token_id')
       return 0
     else:
       token_id = int(token_id.split(':')[1])
     for (concept_start, concept_end, concept) in self.concept_dict[doc_id][sen_id]:
       if token_id <= concept_end and token_id >= concept_start:
         return CONCEPT_CODE_DICT[concept.strip().lower()]
-    # print(pprefix, 'failed to find concept', doc_id, 'sen', sen_id, 'token', token_id)
     return 0
 
   def retrieve_str_subtoken_map(self, subtoken_map):
-    """
-    
-    """
     start_text = start_text.lower().strip()#.strip(punctuation)
     end_text = end_text.lower().strip()#.strip(punctuation)
 
-    # search through the
     for (st, end, concept, text) in self.concept_dict_str[doc_id]:
       if st == start_text and end == end_text:
         return CONCEPT_CODE_DICT[concept]
@@ -133,10 +121,8 @@ class DocumentState(object):
 
   def finalize(self):
     pprefix = '[finalize]'
-    # finalized: segments, segment_subtoken_map
-    # populate speakers from info
+    
     subtoken_idx = 0
-    # print(pprefix, 'doc_key', self.doc_key)
 
     for segment in self.segment_info:
       speakers = []
@@ -144,26 +130,14 @@ class DocumentState(object):
 
       for i, tok_info in enumerate(segment):
         speakers.append('[SPL]')
-        # print(pprefix, 'tok_info', tok_info)
         if tok_info is not None:
 
           concept = self.retrieve_concept(self.doc_key, tok_info[4])
-          # if concept!= '-':
-          #   print(pprefix, 'concept', concept)
+          
         else:
           concept = 0
-
-        # token_id = '-'
         token_ids.append(concept)
-        # if tok_info is None and (i == 0 or i == len(segment) - 1):
-        #   speakers.append('[SPL]')
-        # elif tok_info is None:
-        #   speakers.append(speakers[-1])
-        # else:
-        #   speakers.append(tok_info[9])
-        #   if tok_info[4] == 'PRP':
-        #     self.pronouns.append(subtoken_idx)
-        # subtoken_idx += 1
+        
       self.speakers += [speakers]
       self.token_ids += [token_ids]
     # populate sentence map
@@ -180,13 +154,8 @@ class DocumentState(object):
         coref = tok_info[-2] if tok_info is not None else '-'
         i2b2_id = tok_info[-3] if tok_info is not None else '-'
         conll_text = tok_info[1] if tok_info is not None else '-'
-        # print(pprefix, 'tok_info', tok_info)
-        # if conll_text != '-':
-        #   subtoken_text.append((first_subtoken_index, conll_text.lower().strip()))  # .strip(punctuation)))
-
+        
         if coref != "-":
-          # i2b2_subtoken_id_map.append((i2b2_id, (first_subtoken_index, conll_text)))
-
 
           last_subtoken_index = first_subtoken_index + tok_info[-1] - 1
           for part in coref.split("|"):
@@ -204,11 +173,9 @@ class DocumentState(object):
               self.clusters[cluster_id].append((start, last_subtoken_index))
 
 
-    # print(pprefix, 'i2b2_subtoken_id_map', str(i2b2_subtoken_id_map)[:300])
     subtoken_text = list(itertools.chain.from_iterable(self.segments))
 
     concept_clusters_text = defaultdict(list)
-    # i2b2_subtoken_id_map = dict(i2b2_subtoken_id_map)
     self.concept_clusters[self.doc_key] = defaultdict(list)
     self.umls_clusters[self.doc_key] = defaultdict(list)
     if 'clinical' in self.doc_key:
@@ -218,10 +185,6 @@ class DocumentState(object):
 
 
           conll_text = debug_util.reformat_str(subtoken_text[i:j+i+1]).lower().strip().replace(" ", "")#.strip(punctuation)
-          # If j == 0, then we should be saving i:i
-          # if conll_text == 'hyperbilirubinemia':
-          #   print('founf hyperbilirubinemia')
-          #   print('should be contained in ', self.umls_clusters[self.doc_key])
 
           if self.doc_key in self.concept_dict_str and conll_text in self.concept_dict_str[self.doc_key]:# and j-i <= len(conll_text.split()):
             concept = self.concept_dict_str[self.doc_key][conll_text]
@@ -234,9 +197,7 @@ class DocumentState(object):
 
 
 
-    # print(pprefix, self.doc_key, 'writing umls clusters', self.umls_clusters[self.doc_key])
-    # exit(0)
-    # merge clusters
+   
     merged_clusters = []
     for c1 in self.clusters.values():
       existing = None
@@ -254,23 +215,7 @@ class DocumentState(object):
         merged_clusters.append(set(c1))
     merged_clusters = [list(c) for c in merged_clusters]
 
-    # if 'clinical' in self.doc_key:
-    # # check that all mentions have concept
-    #   for cl in merged_clusters:
-    #     for sp in cl:
-    #       found = False
-    #       for concept in self.concept_clusters[self.doc_key].keys():
-    #
-    #         if [sp[0],sp[1]] in self.concept_clusters[self.doc_key][concept]:
-    #           found = True
-    #       if not found:
-    #         span_text = debug_util.reformat_str(subtoken_text[sp[0]:sp[1]+1]).lower().strip().replace(" ", "")
-    #         print('failed to find {} at start {} end {}'.format(span_text, sp[0],sp[1]),'in dict? {}'.format(span_text in self.concept_dict_str[self.doc_key]))
-    #         if span_text == 'neonatology':
-    #           print('spans collected for this concept person are:', self.concept_clusters[self.doc_key]['person'], [31,33] in self.concept_clusters[self.doc_key]['person'])
-    #         # exit(0)
-
-
+  
     all_mentions = util.flatten(merged_clusters)
     sentence_map =  get_sentence_map(self.segments, self.sentence_end)
     subtoken_map = util.flatten(self.segment_subtoken_map)
@@ -445,12 +390,10 @@ def get_concept_dict():
   # iterate through docs in directory
   for filename in os.listdir(directory):
     doc_id = filename[:-len('.txt.con')]
-    # print('doc_id', doc_id)
     concept_dict[doc_id] = defaultdict(list)
     with open(os.path.join(directory, filename)) as fp:
       for line in fp.readlines():
-        # print('line.strip()', line.strip())
-        # print('shlex.split(line.strip())')
+
         try:
           shlex_split_str = shlex.split(line.strip())
         except (ValueError) as e:
@@ -477,11 +420,9 @@ def get_concept_dict():
 
 def get_concept_dict_str(directory):
   concept_dict = {}
-  # directory = '/projects/tir4/users/nmgandhi/coref/data/concepts'
   # iterate through docs in directory
   for filename in os.listdir(directory):
     doc_id = filename[:-len('.txt.con')] + '_0'
-    # print('doc_id', doc_id)
     concept_dict[doc_id] = {}
     with open(os.path.join(directory, filename)) as fp:
       for line in fp.readlines():
@@ -514,7 +455,6 @@ def get_concept_dict_str(directory):
 def get_umls_dict_str(directory):
   pprefix = '[get_umls_dict_str]'
   concept_dict = {}
-  # directory = '/projects/tir4/users/nmgandhi/coref/data/docs'
   docs = glob.glob(directory + '/*.json', recursive=True)
   for doc in docs:
     doc_id = os.path.basename(doc)[:-len('.umls.json')] + '_0'
@@ -522,15 +462,12 @@ def get_umls_dict_str(directory):
 
     with open(doc, 'r') as f:
       jsonlines = json.load(f)
-    # jsonlines = debug_util.load_jsonlines(doc)
-    # print(pprefix, 'jsonlines', jsonlines, 'doc_key', doc_key)
+
     for sen in jsonlines:
       for ent in sen:
         ent_text = ent['pref_name'].lower().strip().replace(" ", "")
         concept_dict[doc_id][ent_text] = ent['cui']
-    #
-    # print(pprefix, 'concept_dict', concept_dict)
-    # exit(0)
+
   return concept_dict
 
 def minimize_partition_i2b2(name, language, extension, labels, stats, tokenizer, seg_len, input_dir, output_dir,
@@ -544,7 +481,6 @@ def minimize_partition_i2b2(name, language, extension, labels, stats, tokenizer,
     for line in input_file.readlines():
       begin_document_match = re.match(conll.BEGIN_DOCUMENT_REGEX_I2B2_ALT, line)
       #TODO
-      # begin_document_match = re.match(conll.BEGIN_DOCUMENT_REGEX_I2B2, line)
       if begin_document_match:
         doc_key = conll.get_doc_key(begin_document_match.group(1), 0)
         # print('doc_key', doc_key)
@@ -552,8 +488,6 @@ def minimize_partition_i2b2(name, language, extension, labels, stats, tokenizer,
       elif line.startswith("#end document"):
         continue
       else:
-        # print('minimize, documents', documents)
-        # print('minimize, lin', line)
         documents[-1][1].append(line)
   umls_dict_str = get_umls_dict_str(umls_dir)
 
